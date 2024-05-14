@@ -7,7 +7,7 @@ const unsigned long SEC_TO_MIL = 1000UL;
 const unsigned long PUMP_TIME = 75 * SEC_TO_MIL;
 const unsigned long VENT_TIME = 13.5 * SEC_TO_MIL; //Calibrated for 25psi inlet pressure
 const unsigned long IDLE_TIME = 0.5 * SEC_TO_MIL;
-const int NUM_CYCLES = 1;
+const int NUM_CYCLES = 10;
 const unsigned long EXTRA_VENT_TIME = 5 * SEC_TO_MIL;
 
 
@@ -33,7 +33,7 @@ void loop() {
     Serial.print("Button Pressed\n");
     int i =0;
     while (i < NUM_CYCLES) {
-      Serial.print("Running cycle");
+      Serial.print("Running cycle: ");
       Serial.print(i);
       Serial.print("\n");
       do_cycle(PUMP_TIME, VENT_TIME);
